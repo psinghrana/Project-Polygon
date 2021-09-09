@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{%block body%}
+
+<br>
+<div class="container">
+<h1 style="color:red">Here is list of Providers</h1>
+<br>
+<table class="table" style="border-style: inset">
+  <thead>
+    <tr>
+      <th scope="col" style="color:red">Name</th>
+      <th scope="col" style="color:red">Email Id</th>
+      <th scope="col" style="color:red">Phone Number</th>
+      <th scope="col" style="color:red">Language</th>
+      <th scope="col" style="color:red">Currency</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+    {% if all %}
+    {% for provider in all %}
+    <tr>
+      <td style="color:red">{{provider.name}}</th>
+      <th style="color:red">{{provider.email}}</th>
+      <td style="color:red">{{provider.phone}}</td>
+      <td style="color:red">{{provider.lang}}</td>
+      <td style="color:red">{{provider.curr}}</td>
+       <td>
+      <a href="/services" type="button" class="btn btn-success btn-sm mx-1">Add Service</button>
+      </td>
+    </tr>
+    {% endfor %}
+    {% else %}
+         <div class="alert alert-warning" role="alert">
+              No record found
+    {% endif %}
+
+  </tbody>
+</table>
+</div>
+
+{%endblock body%}
+

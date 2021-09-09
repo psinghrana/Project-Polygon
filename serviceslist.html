@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{%block body%}
+
+<br>
+<div class="container">
+<h1 style="color:blue">Services in Different cities</h1>
+<br>
+<table class="table" style="border-style: inset">
+  <thead>
+    <tr>
+      <th scope="col" style="color:blue">Name</th>
+      <th scope="col" style="color:blue">Phone Number</th>
+      <th scope="col" style="color:blue">City</th>
+      <th scope="col" style="color:blue">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+
+    {% if ent %}
+    {% for services in ent %}
+    <tr>
+      <td style="color:blue">{{services.name}}</th>
+      <td style="color:blue">{{services.phone}}</td>
+      <td style="color:blue">{{services.city}}</td>
+      <td style="color:blue">{{services.price}}</td>
+    </tr>
+    {% endfor %}
+    {% else %}
+         <div class="alert alert-warning" role="alert">
+              No record found
+    {% endif %}
+
+  </tbody>
+</table>
+</div>
+
+{%endblock body%}
+
